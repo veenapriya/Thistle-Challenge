@@ -13,11 +13,11 @@ Checkout workflow:
 7.	Set your address details 
 8.	Fill the payment details.
 
-1.	Please write a query for how many customers started the subscription flow each month as well as the number and % that completed.
+# 1.	Please write a query for how many customers started the subscription flow each month as well as the number and % that completed.
 
 Who could be the stakeholders asking the information?
-Product, Marketing - Try out different food plans through to A/B tests and find the most efficient food plan for users.
-UX - Try to identify the reasons why users are not completing the checkout flow.
+- Product, Marketing - Try out different food plans through to A/B tests and find the most efficient food plan for users.
+- UX - Try to identify the reasons why users are not completing the checkout flow.
 
 Query:
 
@@ -53,11 +53,11 @@ ORDER BY 1,
 
 
 
-2.	What is the signup success rate (# of people signing up for a subscription vs. all people who enter the checkout flow) for meat vs. veg plans?
+# 2.	What is the signup success rate (# of people signing up for a subscription vs. all people who enter the checkout flow) for meat vs. veg plans?
 
 Who could be the stakeholders asking the information?
-Marketing and sales - Team can reach out to users who have successfully signed up promote their prefered food plans. 
-Operations team - This information helps the team to understand how much food and what kind of food is consumed by users.
+- Marketing and sales - Team can reach out to users who have successfully signed up promote their prefered food plans. 
+- Operations team - This information helps the team to understand how much food and what kind of food is consumed by users.
 
 
 Query:
@@ -81,10 +81,10 @@ SELECT ((SELECT COUNT(DISTINCT user_id)::decimal
       AND   protein_type = 'animal_protein')) as success_Rate_Meat
 
 
-3.	Please calculate how many customers cancel within 14 days of signing up.
+# 3.	Please calculate how many customers cancel within 14 days of signing up.
 
 Who could be the stakeholders asking the information?
-Product management - This helps the product team to understand why users are canceling and probe further investigations on how to improve customers experience.
+- Product management - This helps the product team to understand why users are canceling and probe further investigations on how to improve customers experience.
 
 SELECT COUNT(user_id) as number_of_cancellations
 FROM thistle_web.subscriptions_subscription s
@@ -94,11 +94,11 @@ FROM thistle_web.subscriptions_subscription s
    AND s.date_to_resume IS NULL;
 
 
-4.	Please calculate retention by weekly cohort.
+# 4.	Please calculate retention by weekly cohort.
 
 Who could be the stakeholders asking the information?
-Product & Marketing teams - This parameter will help keep track of the product offering. Product and marketing team can alter the food plans based on the needs of the user.
-Operations team - Retention rate will provide data points to the team on how to plan out food resources for the upcoming week. 
+- Product & Marketing teams - This parameter will help keep track of the product offering. Product and marketing team can alter the food plans based on the needs of the user.
+- Operations team - Retention rate will provide data points to the team on how to plan out food resources for the upcoming week. 
 
 
 SELECT result.*,
